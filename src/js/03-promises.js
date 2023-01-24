@@ -18,7 +18,8 @@ function onFormSubmit(e) {
 
   for (let i = 0; i < amount; i += 1) {
     const newDelay = Number(step) * Number(i) + Number(delay);
-    setTimeout(createPromise, newDelay)}};
+    console.log(i + 1);
+    createPromise(i + 1, newDelay)}};
 
   function createPromise(position, delay) {
     
@@ -30,7 +31,7 @@ function onFormSubmit(e) {
         } else {
           Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
         }
-      }, 0)
+      }, delay)
     })
 };
 
