@@ -3,9 +3,6 @@ import "notiflix/dist/notiflix-3.2.6.min.css";
 
 const refs = {
   formEl: document.querySelector('.form'),
-  // delayInp: document.querySelector('[name="delay"]'),
-  // stepInp: document.querySelector('[name="step"]'),
-  // amountInp: document.querySelector('[name="amount"]'),
 };
 
 refs.formEl.addEventListener('submit', onFormSubmit);
@@ -20,7 +17,7 @@ function onFormSubmit(e) {
     const newDelay = Number(step) * Number(i) + Number(delay);
     createPromise(i + 1, newDelay)}};
 
-  function createPromise(position, delay) {
+function createPromise(position, delay) {
     
     return new Promise(() => {
       const shouldResolve = Math.random() > 0.3;
